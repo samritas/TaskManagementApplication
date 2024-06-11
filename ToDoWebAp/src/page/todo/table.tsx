@@ -36,25 +36,12 @@ const bull = (
 
 export const Table = () => {
   const gridRef = useRef<AgGridReact>(null);
-  const [rowData, setRowData] = useState([
-    {
-      name: "Tesla",
-      description: "description Y",
-      price: 64950,
-      name1: "Tesla",
-      description1: "description Y",
-      price1: 64950,
-    },
-    { name: "Ford", description: "F-Series", price: 33850 },
-    { name: "Toyota", description: "Corolla", price: 29600 },
-  ]);
   const [open, setOpen] = useState(false);
   const [updateOpen, setUpdateOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState({});
   const tododata = useSelector((state: any) => state.todo.value);
 
-  console.log(tododata, "tododata");
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTodo() as any);
@@ -63,7 +50,6 @@ export const Table = () => {
   const handleOpen = () => setOpen(true);
 
   const handleUpdateOpen = (row: any) => {
-    console.log(row, "roww");
     setSelectedRow(row);
     setUpdateOpen(true);
   };
@@ -87,8 +73,6 @@ export const Table = () => {
   };
 
   const handleUpdate = () => {
-    // Add your update logic here
-    console.log("Updated:", selectedRow);
     handleUpdateClose();
   };
 

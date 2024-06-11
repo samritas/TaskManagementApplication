@@ -24,7 +24,6 @@ export default function SignIn() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log(event.currentTarget);
     const reqdata = {
       username: data.get("username"),
       password: data.get("password"),
@@ -32,19 +31,11 @@ export default function SignIn() {
     try {
       await dispatch(login(reqdata) as any).then((res: any) => {
         if (res.meta.requestStatus !== "rejected") {
-          console.log(res);
+          
           navigate("/home");
         }
       });
     } catch (error) {}
-
-    console.log(
-      {
-        UserName: data.get("username"),
-        password: data.get("password"),
-      },
-      "PPPPPPPPPPPPPPPPPPPPPp"
-    );
   };
 
   return (

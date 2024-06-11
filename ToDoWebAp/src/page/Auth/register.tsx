@@ -25,10 +25,6 @@ export default function SignUp() {
   const handleSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      username: data.get("username"),
-      password: data.get("password"),
-    });
     const reqdata = {
       username: data.get("username"),
       password: data.get("password"),
@@ -36,7 +32,6 @@ export default function SignUp() {
     try {
      await dispatch(signup(reqdata) as any).then((res: any) => {
       if (res.meta.requestStatus !== "rejected") {
-        console.log(res);
         navigate("/home");
       }
     });

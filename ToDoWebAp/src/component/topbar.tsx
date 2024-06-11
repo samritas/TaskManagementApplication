@@ -16,8 +16,6 @@ function TopBar() {
   };
 
   const handleLogout = () => {
-    // Add your logout logic here
-    console.log('Logged out');
     handleLogoutClose();
     navigate('/');
   };

@@ -57,7 +57,6 @@ const todoSlice = createSlice({
         state.loading = true;
       })
       .addCase(getTodo.fulfilled, (state, action) => {
-        console.log(action, "action");
         state.loading = false;
         state.value = action.payload;
       })

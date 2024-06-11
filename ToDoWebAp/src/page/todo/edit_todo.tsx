@@ -25,7 +25,6 @@ export const EditTodo = ({
   handleUpdateClose,
   selectedRow,
 }: any) => {
-  console.log(selectedRow, "tttttttt");
   const [title, setTitle] = useState(selectedRow?.title);
   const [description, setDescription] = useState(selectedRow?.description);
   const [deadline, setDeadline] = useState(selectedRow?.deadline);

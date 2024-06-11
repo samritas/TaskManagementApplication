@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export const login = createAsyncThunk("counter/login", async (data: any) => {
-  console.log("++++++++++++++=");
   const response = await axios.post("http://localhost:8000/auth/login", {
     username: data?.username,
     password: data?.password,
